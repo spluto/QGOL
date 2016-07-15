@@ -7,29 +7,29 @@
 #include <QTimer>
 #include <qmath.h>
 
-GameWidget::GameWidget(QWidget *parent)
+GOLWidget::GOLWidget(QWidget *parent)
     : QWidget(parent), timer(new QTimer(this)), size(50), current(size) {
 
   timer->setInterval(100);
   masterColor = palette().color(QPalette::Highlight);
-  connect(timer, SIGNAL(timeout()), this, SLOT(newGeneration()));
+  connect(timer, SIGNAL(timeout()), this, SLOT(next()));
 }
 
-GameWidget::~GameWidget() { delete &current; }
+GOLWidget::~GOLWidget() { delete &current; }
 
-void GameWidget::start() { timer->start(); }
+void GOLWidget::start() { timer->start(); }
 
-void GameWidget::restart() {
+void GOLWidget::restart() {
   clear();
   timer->stop();
 }
 
-void GameWidget::clear() {
+void GOLWidget::clear() {
   current.clear();
   update();
 }
 
-bool GameWidget::isAlive(int x, int y) {
+bool GOLWidget::isAlive(int x, int y) {
   int power = 0;
   power += current(x + 1, y) + current(x - 1, y) + current(x, y + 1) +
            current(x, y - 1) + current(x + 1, y - 1) + current(x - 1, y + 1) +
@@ -39,7 +39,7 @@ bool GameWidget::isAlive(int x, int y) {
   return false;
 }
 
-void GameWidget::newGeneration() {
+void GOLWidget::next() {
   int notChanged = 0;
   GOLMatrix next(size);
   for (int i = 0; i < size; i++) {
@@ -59,13 +59,13 @@ void GameWidget::newGeneration() {
   update();
 }
 
-void GameWidget::paintEvent(QPaintEvent *) {
+void GOLWidget::paintEvent(QPaintEvent *) {
   QPainter p(this);
   paintGrid(p);
-  paintUniverse(p);
+  paintCells(p);
 }
 
-void GameWidget::mousePressEvent(QMouseEvent *e) {
+void GOLWidget::mousePressEvent(QMouseEvent *e) {
   double cellWidth = (double)width() / size;
   double cellHeight = (double)height() / size;
   int y = floor(e->y() / cellHeight);
@@ -75,7 +75,7 @@ void GameWidget::mousePressEvent(QMouseEvent *e) {
   update();
 }
 
-void GameWidget::mouseMoveEvent(QMouseEvent *e) {
+void GOLWidget::mouseMoveEvent(QMouseEvent *e) {
   double cellWidth = (double)width() / size;
   double cellHeight = (double)height() / size;
   int y = floor(e->y() / cellHeight);
@@ -86,7 +86,7 @@ void GameWidget::mouseMoveEvent(QMouseEvent *e) {
   }
 }
 
-void GameWidget::paintGrid(QPainter &p) {
+void GOLWidget::paintGrid(QPainter &p) {
   QRect borders(0, 0, width() - 1, height() - 1);
   QColor gridColor = masterColor;
   p.setPen(gridColor);
@@ -99,7 +99,7 @@ void GameWidget::paintGrid(QPainter &p) {
   p.drawRect(borders);
 }
 
-void GameWidget::paintUniverse(QPainter &p) {
+void GOLWidget::paintCells(QPainter &p) {
   double cellWidth = (double)width() / size;
   double cellHeight = (double)height() / size;
   for (int i = 0; i < size; i++) {
