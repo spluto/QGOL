@@ -20,7 +20,8 @@ protected:
 
 public slots:
   void start();
-  void restart();
+  void stop();
+  void tick();
   void clear();
 
 private slots:
@@ -31,8 +32,6 @@ private slots:
 private:
   QColor masterColor;
   QTimer *timer;
-//  bool *universe; // current map
-//  bool *next;     // next map
   int size;
   GOLMatrix current;
   bool isAlive(int k, int j);

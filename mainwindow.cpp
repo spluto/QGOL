@@ -15,7 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
   icon.fill(currentColor);
 
   connect(ui->startButton, SIGNAL(clicked()), game, SLOT(start()));
-  connect(ui->restartButton, SIGNAL(clicked()), game, SLOT(restart()));
+  connect(ui->stopButton, SIGNAL(clicked()), game, SLOT(stop()));
+  connect(ui->tickButton, SIGNAL(clicked()), game, SLOT(tick()));
+  connect(ui->clearButton, SIGNAL(clicked()), game, SLOT(clear()));
 
   ui->mainLayout->setStretchFactor(ui->gameLayout, 8);
   ui->mainLayout->setStretchFactor(ui->controlsLayout, 2);

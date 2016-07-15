@@ -27,9 +27,23 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="restartButton">
+         <widget class="QPushButton" name="stopButton">
           <property name="text">
-           <string>Restart</string>
+           <string>Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="tickButton">
+          <property name="text">
+           <string>Tick</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearButton">
+          <property name="text">
+           <string>Clear</string>
           </property>
          </widget>
         </item>

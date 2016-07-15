@@ -73,7 +73,6 @@ void GOLWidget::mousePressEvent(QMouseEvent *e) {
   double cellHeight = (double)height() / size;
   int y = floor(e->y() / cellHeight);
   int x = floor(e->x() / cellWidth);
-  //    universe[k*size + j] = !universe[k*size + j];
   current(y, x) ^= true;
   update();
 }
