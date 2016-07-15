@@ -6,4 +6,4 @@ One interacts with the Game of Life by creating an initial configuration and obs
 
 This implementation
 =====================
-It's very minimalistic implementaion of GOL with infinite grid
+It's very minimalistic implementaion of GOL with toroidal grid
