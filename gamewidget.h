@@ -5,11 +5,11 @@
 #include <QColor>
 #include <QWidget>
 
-class GameWidget : public QWidget {
+class GOLWidget : public QWidget {
   Q_OBJECT
 public:
-  explicit GameWidget(QWidget *parent = 0);
-  ~GameWidget();
+  explicit GOLWidget(QWidget *parent = 0);
+  ~GOLWidget();
 
 protected:
   void paintEvent(QPaintEvent *);
@@ -25,8 +25,8 @@ public slots:
 
 private slots:
   void paintGrid(QPainter &p);
-  void paintUniverse(QPainter &p);
-  void newGeneration();
+  void paintCells(QPainter &p);
+  void next();
 
 private:
   QColor masterColor;

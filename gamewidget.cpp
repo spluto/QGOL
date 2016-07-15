@@ -105,11 +105,10 @@ void GameWidget::paintUniverse(QPainter &p) {
   for (int i = 0; i < size; i++) {
     for (int j = 0; j < size; j++) {
       if (current(i, j)) {
-        qreal left = (qreal)(cellWidth * j); // margin from left
-        qreal top = (qreal)(cellHeight * i); // margin from top
+        qreal left = (qreal)(cellWidth * j);
+        qreal top = (qreal)(cellHeight * i);
         QRectF r(left, top, (qreal)cellWidth, (qreal)cellHeight);
-        p.fillRect(r,
-                   QBrush(masterColor)); // fill cell with brush of main color
+        p.fillRect(r, QBrush(masterColor));
       }
     }
   }

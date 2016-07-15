@@ -8,7 +8,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow),
       currentColor(QColor(palette().color(QPalette::Highlight))),
-      game(new GameWidget(this)) {
+      game(new GOLWidget(this)) {
   ui->setupUi(this);
 
   QPixmap icon(16, 16);

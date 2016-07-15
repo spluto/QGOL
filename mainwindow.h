@@ -19,7 +19,7 @@ public:
 private:
   Ui::MainWindow *ui;
   QColor currentColor;
-  GameWidget *game;
+  GOLWidget *game;
 };
 
 #endif // MAINWINDOW_H
