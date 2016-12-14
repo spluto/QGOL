@@ -18,49 +18,57 @@
     <item>
      <layout class="QHBoxLayout" name="mainLayout">
       <item>
-       <layout class="QVBoxLayout" name="controlsLayout">
-        <item>
-         <widget class="QPushButton" name="startButton">
-          <property name="text">
-           <string>Start</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="stopButton">
-          <property name="text">
-           <string>Stop</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="tickButton">
-          <property name="text">
-           <string>Tick</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="clearButton">
-          <property name="text">
-           <string>Clear</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+       <widget class="QFrame" name="controlsLayout_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="controlsLayout">
+         <item>
+          <widget class="QPushButton" name="startButton">
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="stopButton">
+           <property name="text">
+            <string>Stop</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="tickButton">
+           <property name="text">
+            <string>Tick</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clearButton">
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
       </item>
       <item>
        <layout class="QVBoxLayout" name="gameLayout"/>

@@ -2,6 +2,7 @@ QT       += core gui widgets
 
 TARGET = qgol
 TEMPLATE = app
+CONFIG += c++11
 
 
 SOURCES += main.cpp\

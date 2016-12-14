@@ -13,7 +13,7 @@ public:
   void clear();
 
 private:
-  std::vector<std::vector<int>> data;
+  std::vector<std::vector<int> > data;
   void calibrate(int *x, int *y);
   int size;
 };

@@ -11,7 +11,7 @@ GOLWidget::GOLWidget(QWidget *parent)
     : QWidget(parent), timer(new QTimer(this)), size(50), current(size) {
 
   timer->setInterval(100);
-  masterColor = palette().color(QPalette::Highlight);
+  masterColor = palette().color(QPalette::Light);
   connect(timer, SIGNAL(timeout()), this, SLOT(next()));
 }
 
